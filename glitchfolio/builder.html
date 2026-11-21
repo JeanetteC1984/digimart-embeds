@@ -84,12 +84,12 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;b
 </fieldset>
 
 <fieldset><legend>👤 ABOUT YOU</legend>
-<div class="row"><label>Name<input name="n" value="Alex Rivera"></label><label>Title<input name="t" value="Content Creator &amp; Visual Designer"></label><label>Location<input name="l" value="Austin, TX"></label></div>
+<div class="row"><label>Name<input name="n" value="Digimart"></label><label>Title<input name="t" value="Software that inspires"></label><label>Location<input name="l" value="Apps &amp; free Notion templates"></label></div>
 </fieldset>
 
 <fieldset><legend>📈 STATS</legend>
-<div class="row"><label>Number 1<input name="s0v" value="120K"></label><label>Label 1<input name="s0l" value="Followers"></label><label>Number 2<input name="s1v" value="6.8%"></label><label>Label 2<input name="s1l" value="Avg. engagement"></label></div>
-<div class="row"><label>Number 3<input name="s2v" value="300+"></label><label>Label 3<input name="s2l" value="Projects shipped"></label><label>Number 4<input name="s3v" value="40+"></label><label>Label 4<input name="s3l" value="Brand partners"></label></div>
+<div class="row"><label>Number 1<input name="s0v" value="4"></label><label>Label 1<input name="s0l" value="Apps"></label><label>Number 2<input name="s1v" value="$0"></label><label>Label 2<input name="s1l" value="Free Notion templates"></label></div>
+<div class="row"><label>Number 3<input name="s2v" value="3"></label><label>Label 3<input name="s2l" value="Glitchfolio layouts"></label><label>Number 4<input name="s3v" value="5"></label><label>Label 4<input name="s3l" value="Color themes"></label></div>
 </fieldset>
 
 <fieldset id="work"><legend>🎨 WORK (UP TO 4)</legend><p class="hint">Tags: separate with commas. Link: optional, must start with https://</p></fieldset>
@@ -97,10 +97,10 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;b
 <fieldset id="rev"><legend>💬 REVIEWS (UP TO 3)</legend></fieldset>
 
 <fieldset><legend>📩 CONTACT</legend>
-<div class="row"><label>Heading<input name="ch" value="Let's work together"></label><label>Email<input name="m" type="email" value="hello@yourname.com"></label></div>
-<label>Message<input name="cp" value="Send your brand, budget and timeline. I reply within 48 hours."></label>
-<div class="row" style="margin-top:8px"><label>Instagram link<input name="ig" value="https://instagram.com"></label><label>TikTok link<input name="tt" value="https://tiktok.com"></label><label>YouTube link<input name="yt" value="https://youtube.com"></label></div>
-<div class="row"><label>LinkedIn link<input name="li" value="https://linkedin.com"></label><label>Website link<input name="ws" value=""></label></div>
+<div class="row"><label>Heading<input name="ch" value="Make it yours"></label><label>Email<input name="m" type="email" value=""></label></div>
+<label>Message<input name="cp" value="Duplicate a free Digimart template in Notion, then build your own Glitchfolio mini app."></label>
+<div class="row" style="margin-top:8px"><label>Instagram link<input name="ig" value=""></label><label>TikTok link<input name="tt" value=""></label><label>YouTube link<input name="yt" value=""></label></div>
+<div class="row"><label>LinkedIn link<input name="li" value=""></label><label>Website link<input name="ws" value=""></label></div>
 </fieldset>
 <button type="button" class="ghost" id="clear">Clear all sample text</button>
 </form>
@@ -118,19 +118,18 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;b
 
 <script>
 var W=[
-{i:'🎮',h:'Neon Nights Game Launch',d:'Cinematic teaser and 5 cut-downs for an indie game launch.',g:'Video, TikTok',v:'1.25M',r:'8.4%',u:''},
-{i:'✨',h:'App Launch Motion Pack',d:'Logo stings and neon UI explainers for a software launch.',g:'Motion, Instagram',v:'480K',r:'6.9%',u:''},
-{i:'🛍️',h:'Glow Skincare Rebrand',d:'Logo, palette, packaging mockups and a social kit.',g:'Brand Design, Website',v:'340K',r:'6.1%',u:''},
-{i:'📸',h:'Urban Tech Lookbook',d:'30-shot editorial lookbook for a tech-wear drop.',g:'Photography, Instagram',v:'210K',r:'7.2%',u:''}];
+{i:'👾',h:'Glitchfolio',d:'A creator portfolio with a glitch edge. Show your work, services and reviews.',g:'Portfolio, Notion',v:'',r:'',u:''},
+{i:'🚗',h:'Gig Worker Tracker',d:'Track shifts, earnings, miles and expenses, and hit your weekly goal.',g:'Finance, Notion',v:'',r:'',u:''},
+{i:'🗺️',h:'Mapped',d:'Save places you love or want to try, rate them and open them in Maps.',g:'Travel, Places',v:'',r:'',u:''},
+{i:'🎤',h:'Sing',d:'A vocal practice studio. Track songs, keys and practice time.',g:'Music, Practice',v:'',r:'',u:''}];
 var V=[
-{c:'Content',h:'Sponsored Short-Form Video',p:'$850',b:'1 vertical video 30–60s, Script + 2 revisions, 5–7 day turnaround'},
-{c:'Content',h:'UGC Ad Bundle',p:'$1,200',b:'3 UGC-style ads, Hook variations + raw footage, 30-day paid usage'},
-{c:'Design',h:'Brand Identity Kit',p:'$2,500',b:'Logo suite + palette, Type system + social templates, Brand guide PDF'},
-{c:'Strategy',h:'Content Strategy Session',p:'$300',b:'60-minute call, Channel audit, 30-day content plan'}];
+{c:'Template',h:'Glitchfolio Creator Portfolio',p:'Free',b:'Portfolio services & reviews, Brand deal pipeline, Custom mini app embed'},
+{c:'Template',h:'Gig Worker Tracker',p:'Free',b:'Shifts & earnings log, Mileage & expenses, Weekly goal bar'},
+{c:'Template',h:'Digimart App Demos',p:'Free',b:'Every Digimart app in one place, Sample data included, Duplicate and make it yours'},
+{c:'',h:'',p:'',b:''}];
 var R=[
-{q:'Alex turned our trailer into a moment. The teaser outperformed every paid ad we ran.',c:'PixelForge Studios',o:'Marketing Lead'},
-{q:'Our new brand finally looks like the product feels. Sales lifted 30% after launch.',c:'Glow Co.',o:'Founder'},
-{q:'Fast, creative and easy to work with. The lookbook sold out our drop.',c:'Volt Wear',o:'Creative Director'}];
+{q:"Tried a Digimart app or template? Send us your review and we'll feature it here.",c:'Your name',o:'Digimart user'},
+{q:'',c:'',o:''},{q:'',c:'',o:''}];
 function esc(x){return String(x).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
 function inp(n,l,v,ta){return '<label>'+l+(ta?'<textarea name="'+n+'">'+esc(v)+'</textarea>':'<input name="'+n+'" value="'+esc(v)+'">')+'</label>'}
 document.getElementById('work').insertAdjacentHTML('beforeend',W.map(function(x,i){return '<div class="slot"><div class="row">'+inp('w'+i+'i','Emoji',x.i)+inp('w'+i+'h','Project name',x.h)+'</div>'+inp('w'+i+'d','Short description',x.d,1)+'<div class="row" style="margin-top:8px">'+inp('w'+i+'g','Tags',x.g)+inp('w'+i+'v','Views',x.v)+inp('w'+i+'r','Engagement',x.r)+'</div>'+inp('w'+i+'u','Link (optional)',x.u)+'</div>'}).join(''));
