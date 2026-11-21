@@ -6,6 +6,7 @@
 <title>Glitchfolio Link Builder · Digimart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&family=Playfair+Display:wght@800&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 :root{--cyan:#00BEE8;--pink:#E30C84;--purple:#9b3fd0;--bg:#050507;--card:#0B0A12;--line:#1F1B2E;--text:#ece9f7;--muted:#a7a2c0}
 *{box-sizing:border-box}
@@ -36,6 +37,17 @@ button{cursor:pointer;border:0;border-radius:10px;padding:0 16px;font:700 12px O
 .ghost{background:transparent;border:1px solid var(--line);color:var(--muted);padding:8px 12px;margin-top:8px}
 iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
 .brand{font:800 13px Orbitron,sans-serif;letter-spacing:2px}.c{color:var(--cyan)}.p{color:var(--pink)}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:4px 0 12px}
+.chip{position:relative;cursor:pointer}
+.chip input{position:absolute;opacity:0;width:0;height:0}
+.chip span{display:block;border:1px solid var(--line);border-radius:12px;padding:10px;background:#07060c;font-size:12px;color:var(--muted);transition:.15s;height:100%}
+.chip input:checked+span{border-color:var(--pink);color:#fff;box-shadow:0 0 0 1px var(--pink),0 0 14px rgba(227,12,132,.35)}
+.chip input:focus-visible+span{outline:2px solid var(--cyan)}
+.chip b{display:block;color:#fff;font-size:13px;margin-bottom:3px}
+.sw{display:flex;gap:4px;margin-bottom:6px}.sw i{width:18px;height:18px;border-radius:50%;display:block;border:1px solid rgba(255,255,255,.15)}
+.lay{height:38px;border-radius:6px;margin-bottom:6px;background:#0f0d18;position:relative;overflow:hidden}
+.lay i{position:absolute;background:rgba(0,190,232,.55);border-radius:2px}.lay i.p{background:rgba(227,12,132,.55)}
+.sub{font:700 11px Orbitron,sans-serif;letter-spacing:1.5px;color:var(--muted);margin:2px 0 6px}
 @media(max-width:900px){.cols{grid-template-columns:1fr}.side{position:static}iframe{height:560px}}
 </style>
 </head>
@@ -47,6 +59,30 @@ iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;b
 
 <div class="cols">
 <form id="f" autocomplete="off">
+<fieldset><legend>🎛️ STYLE</legend>
+<div class="sub">TEMPLATE</div>
+<div class="chips">
+<label class="chip"><input type="radio" name="y" value="glitch" checked><span><div class="lay"><i style="left:6px;top:6px;width:30%;height:6px"></i><i class="p" style="left:6px;top:16px;width:18%;height:5px"></i><i style="left:30%;top:16px;width:18%;height:5px;opacity:.5"></i><i style="left:6px;top:26px;width:28%;height:8px;opacity:.6"></i><i style="left:36%;top:26px;width:28%;height:8px;opacity:.6"></i><i style="left:66%;top:26px;width:28%;height:8px;opacity:.6"></i></div><b>Glitch</b>Tabs with a glitch title</span></label>
+<label class="chip"><input type="radio" name="y" value="showcase"><span><div class="lay"><i class="p" style="left:44%;top:4px;width:12%;height:8px;border-radius:50%"></i><i style="left:30%;top:15px;width:40%;height:5px"></i><i style="left:8px;top:24px;width:44%;height:5px;opacity:.6"></i><i style="right:8px;top:24px;width:44%;height:5px;opacity:.6"></i><i style="left:8px;top:32px;width:44%;height:4px;opacity:.4"></i><i style="right:8px;top:32px;width:44%;height:4px;opacity:.4"></i></div><b>Showcase</b>One scrolling page</span></label>
+<label class="chip"><input type="radio" name="y" value="profile"><span><div class="lay"><i class="p" style="left:6px;top:5px;width:26%;height:28px;opacity:.7"></i><i style="left:36%;top:5px;width:30%;height:5px"></i><i style="left:36%;top:15px;width:28%;height:18px;opacity:.5"></i><i style="left:67%;top:15px;width:28%;height:18px;opacity:.5"></i></div><b>Profile</b>Sidebar card + tabs</span></label>
+</div>
+<div class="sub">COLORS</div>
+<div class="chips">
+<label class="chip"><input type="radio" name="c" value="neon" checked><span><div class="sw"><i style="background:#00BEE8"></i><i style="background:#E30C84"></i><i style="background:#050507"></i></div><b>Neon</b>Digimart cyan &amp; pink</span></label>
+<label class="chip"><input type="radio" name="c" value="sunset"><span><div class="sw"><i style="background:#FF8A00"></i><i style="background:#FF2E7E"></i><i style="background:#0d0608"></i></div><b>Sunset</b>Orange &amp; hot pink</span></label>
+<label class="chip"><input type="radio" name="c" value="matrix"><span><div class="sw"><i style="background:#00E58C"></i><i style="background:#00C2FF"></i><i style="background:#030806"></i></div><b>Matrix</b>Green &amp; aqua</span></label>
+<label class="chip"><input type="radio" name="c" value="vapor"><span><div class="sw"><i style="background:#B967FF"></i><i style="background:#FF71CE"></i><i style="background:#0b0716"></i></div><b>Vapor</b>Purple &amp; candy</span></label>
+<label class="chip"><input type="radio" name="c" value="paper"><span><div class="sw"><i style="background:#0077B6"></i><i style="background:#D6246E"></i><i style="background:#F7F6FB"></i></div><b>Paper</b>Clean light mode</span></label>
+</div>
+<div class="sub">FONT</div>
+<div class="chips">
+<label class="chip"><input type="radio" name="f" value="cyber" checked><span><b style="font-family:Orbitron">Cyber</b>Orbitron + Poppins</span></label>
+<label class="chip"><input type="radio" name="f" value="modern"><span><b style="font-family:'Space Grotesk'">Modern</b>Space Grotesk + Inter</span></label>
+<label class="chip"><input type="radio" name="f" value="editorial"><span><b style="font-family:'Playfair Display'">Editorial</b>Playfair + Inter</span></label>
+<label class="chip"><input type="radio" name="f" value="retro"><span><b style="font-family:'Press Start 2P';font-size:10px">Retro</b>Pixel + Space Mono</span></label>
+</div>
+</fieldset>
+
 <fieldset><legend>👤 ABOUT YOU</legend>
 <div class="row"><label>Name<input name="n" value="Alex Rivera"></label><label>Title<input name="t" value="Content Creator &amp; Visual Designer"></label><label>Location<input name="l" value="Austin, TX"></label></div>
 </fieldset>
@@ -104,7 +140,7 @@ document.getElementById('rev').insertAdjacentHTML('beforeend',R.map(function(x,i
 var f=document.getElementById('f');
 function g(n){var el=f.elements[n];return el?el.value.trim():''}
 function data(){
-var d={n:g('n'),t:g('t'),l:g('l'),s:[],w:[],v:[],r:[],m:g('m'),ch:g('ch'),cp:g('cp'),k:{}};
+var d={y:f.elements.y.value,c:f.elements.c.value,f:f.elements.f.value,n:g('n'),t:g('t'),l:g('l'),s:[],w:[],v:[],r:[],m:g('m'),ch:g('ch'),cp:g('cp'),k:{}};
 for(var i=0;i<4;i++){if(g('s'+i+'v')||g('s'+i+'l'))d.s.push([g('s'+i+'v'),g('s'+i+'l')])}
 for(i=0;i<4;i++){if(g('w'+i+'h'))d.w.push({i:g('w'+i+'i'),h:g('w'+i+'h'),d:g('w'+i+'d'),g:g('w'+i+'g'),v:g('w'+i+'v'),r:g('w'+i+'r'),u:g('w'+i+'u')})}
 for(i=0;i<4;i++){if(g('v'+i+'h'))d.v.push({h:g('v'+i+'h'),c:g('v'+i+'c'),p:g('v'+i+'p'),b:g('v'+i+'b')})}
@@ -116,9 +152,9 @@ return d}
 function enc(o){var b=new TextEncoder().encode(JSON.stringify(o)),s='';for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
 var base=new URL('./',location.href).href;
 var t;function update(){var url=base+'?d='+enc(data());document.getElementById('link').value=url;clearTimeout(t);t=setTimeout(function(){document.getElementById('pv').src=url},350)}
-f.addEventListener('input',update);
+f.addEventListener('input',update);f.addEventListener('change',update);
 document.getElementById('copy').onclick=function(){var l=document.getElementById('link');l.select();var b=this;(navigator.clipboard?navigator.clipboard.writeText(l.value):Promise.reject()).catch(function(){document.execCommand('copy')}).then(function(){b.textContent='COPIED ✓';setTimeout(function(){b.textContent='COPY'},1600)})};
-document.getElementById('clear').onclick=function(){if(confirm('Clear all the sample text?')){Array.prototype.forEach.call(f.elements,function(el){if(el.name)el.value=''});update()}};
+document.getElementById('clear').onclick=function(){if(confirm('Clear all the sample text?')){Array.prototype.forEach.call(f.elements,function(el){if(el.name&&el.type!=='radio')el.value=''});update()}};
 update();
 </script>
 </body>
