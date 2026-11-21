@@ -123,5 +123,31 @@ footer{margin-top:10px;font-size:11px;color:var(--muted);text-align:right}
 <div class="bar"></div>
 <footer>Made with 💙 by <b class="c">DIGI</b><b class="p">MART</b> · software that inspires</footer>
 </div>
+<script>
+/* Personal data: index.html?d=<base64url JSON> made by builder.html. Without it the sample above shows (works with no JS too). */
+(function(){
+try{
+var q=new URLSearchParams(location.search).get('d');if(!q)return;
+var b=q.replace(/-/g,'+').replace(/_/g,'/');while(b.length%4)b+='=';
+var bin=atob(b),u=new Uint8Array(bin.length);for(var i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);
+var d=JSON.parse(new TextDecoder().decode(u));
+var e=function(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})};
+var safe=function(x){x=String(x||'').trim();return /^https:\/\//i.test(x)?e(x):''};
+var $=function(s){return document.querySelector(s)};
+var tc=['tp','tc','tv'],vc=['c','p','v','c'],th=['a','b','d','e'];
+if(d.n){$('.who h1').textContent=d.n.toUpperCase();var ini=d.n.trim().split(/\s+/).filter(function(w){return /^\p{L}/u.test(w)}).map(function(w){return w[0]}).join('').slice(0,2).toUpperCase();$('.avatar').textContent=ini;document.title=d.n+' · Glitchfolio'}
+$('.who p').textContent=[d.t,d.l].filter(Boolean).join(' · ');
+if(d.s&&d.s.length)$('.stats').innerHTML=d.s.map(function(x,i){return '<div class="stat"><b class="'+vc[i%4]+'">'+e(x[0])+'</b><span>'+e(x[1])+'</span></div>'}).join('');
+var tags=function(t){return String(t||'').split(',').map(function(x){return x.trim()}).filter(Boolean).slice(0,3).map(function(x,i){return '<span class="tag '+tc[i%3]+'">'+e(x)+'</span>'}).join('')};
+if(d.w&&d.w.length)$('#p1 .grid').innerHTML=d.w.map(function(x,i){var lk=safe(x.u);var inner='<div class="thumb '+th[i%4]+'">'+e(x.i||'✨')+'</div><div class="body"><h3>'+e(x.h)+'</h3><p>'+e(x.d)+'</p>'+tags(x.g)+((x.v||x.r)?'<div class="metric"><span>Views <b>'+e(x.v||'–')+'</b></span><span>Eng. <b>'+e(x.r||'–')+'</b></span></div>':'')+'</div>';return lk?'<a class="card" style="text-decoration:none;color:inherit" target="_blank" href="'+lk+'">'+inner+'</a>':'<div class="card">'+inner+'</div>'}).join('');
+if(d.v&&d.v.length)$('#p2 .grid').innerHTML=d.v.map(function(x,i){return '<div class="card svc"><div class="body">'+(x.c?'<span class="tag '+tc[i%3]+'">'+e(x.c)+'</span>':'')+'<h3>'+e(x.h)+'</h3><div class="price '+vc[i%4]+'">'+e(x.p)+'</div><ul>'+String(x.b||'').split(',').map(function(y){return y.trim()}).filter(Boolean).map(function(y){return '<li>'+e(y)+'</li>'}).join('')+'</ul></div></div>'}).join('');
+if(d.r&&d.r.length)$('#p3 .grid').innerHTML=d.r.map(function(x){return '<div class="card quote"><div class="stars">★★★★★</div><p>'+e(x.q)+'</p><small><b>'+e(x.c)+'</b>'+(x.o?' · '+e(x.o):'')+'</small></div>'}).join('');
+var L=d.k||{},names=[['ig','📷 Instagram'],['tt','🎵 TikTok'],['yt','▶️ YouTube'],['li','💼 LinkedIn'],['ws','🌐 Website']];
+var links=names.filter(function(n){return safe(L[n[0]])}).map(function(n){return '<a href="'+safe(L[n[0]])+'" target="_blank">'+n[1]+'</a>'}).join('');
+var em=String(d.m||'').trim(),emOk=/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(em);
+$('#p4 .contact').innerHTML='<div class="card cta"><h3>'+e(d.ch||"Let's work together")+'</h3><p style="color:var(--muted);font-size:14px;margin:0">'+e(d.cp||'Send your brand, budget and timeline.')+'</p>'+(emOk?'<a class="btn" href="mailto:'+e(em)+'" target="_blank">✉ '+e(em.toUpperCase())+'</a>':'')+'</div>'+(links?'<div class="card links">'+links+'</div>':'');
+}catch(err){}
+})();
+</script>
 </body>
 </html>

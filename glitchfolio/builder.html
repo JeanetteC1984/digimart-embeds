@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Glitchfolio Link Builder · Digimart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cyan:#00BEE8;--pink:#E30C84;--purple:#9b3fd0;--bg:#050507;--card:#0B0A12;--line:#1F1B2E;--text:#ece9f7;--muted:#a7a2c0}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,"Segoe UI",Helvetica,Arial,sans-serif}
+body{background-image:linear-gradient(rgba(0,190,232,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(0,190,232,.06) 1px,transparent 1px);background-size:40px 40px}
+.wrap{max-width:1280px;margin:0 auto;padding:24px 16px 40px}
+h1{margin:0;font:900 30px Orbitron,"Arial Black",sans-serif;color:#fff;text-shadow:-2px 0 rgba(0,190,232,.8),2px 0 rgba(227,12,132,.8)}
+.lead{color:var(--muted);margin:6px 0 20px;font-size:14px}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
+fieldset{border:1px solid var(--line);border-radius:16px;background:rgba(11,10,18,.9);margin:0 0 14px;padding:14px 16px}
+legend{font:700 13px Orbitron,sans-serif;letter-spacing:1.5px;padding:0 6px;color:var(--cyan)}
+fieldset:nth-of-type(2n) legend{color:#ff4fae}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:8px}
+label{display:block;font-size:11.5px;color:var(--muted)}
+input,textarea{width:100%;margin-top:3px;background:#07060c;border:1px solid var(--line);border-radius:9px;color:#fff;padding:8px 10px;font:inherit;font-size:13px}
+input:focus,textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 2px rgba(0,190,232,.25)}
+textarea{resize:vertical;min-height:38px}
+.slot{border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}
+.slot:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.hint{font-size:11.5px;color:var(--muted);margin:0 0 8px}
+.side{position:sticky;top:16px}
+.out{border:1px solid var(--pink);border-radius:16px;background:rgba(11,10,18,.95);padding:14px 16px;margin-bottom:14px;box-shadow:0 0 18px rgba(227,12,132,.25)}
+.out h2{margin:0 0 8px;font:800 15px Orbitron,sans-serif;color:#fff}
+.out ol{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted);line-height:1.6}
+.linkbox{display:flex;gap:8px}
+.linkbox input{font-size:12px;color:var(--cyan)}
+button{cursor:pointer;border:0;border-radius:10px;padding:0 16px;font:700 12px Orbitron,sans-serif;letter-spacing:1px;color:#fff;background:linear-gradient(90deg,var(--cyan),var(--pink));white-space:nowrap}
+.ghost{background:transparent;border:1px solid var(--line);color:var(--muted);padding:8px 12px;margin-top:8px}
+iframe{width:100%;height:640px;border:1px solid var(--line);border-radius:16px;background:var(--bg)}
+.brand{font:800 13px Orbitron,sans-serif;letter-spacing:2px}.c{color:var(--cyan)}.p{color:var(--pink)}
+@media(max-width:900px){.cols{grid-template-columns:1fr}.side{position:static}iframe{height:560px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand"><span class="c">DIGI</span><span class="p">MART</span> · GLITCHFOLIO</div>
+<h1>MAKE YOUR MINI APP</h1>
+<p class="lead">Fill in your details, copy your personal link and embed it in Notion. Nothing is stored anywhere: everything lives inside your link. Leave any box empty to skip it.</p>
+
+<div class="cols">
+<form id="f" autocomplete="off">
+<fieldset><legend>👤 ABOUT YOU</legend>
+<div class="row"><label>Name<input name="n" value="Alex Rivera"></label><label>Title<input name="t" value="Content Creator &amp; Visual Designer"></label><label>Location<input name="l" value="Austin, TX"></label></div>
+</fieldset>
+
+<fieldset><legend>📈 STATS</legend>
+<div class="row"><label>Number 1<input name="s0v" value="120K"></label><label>Label 1<input name="s0l" value="Followers"></label><label>Number 2<input name="s1v" value="6.8%"></label><label>Label 2<input name="s1l" value="Avg. engagement"></label></div>
+<div class="row"><label>Number 3<input name="s2v" value="300+"></label><label>Label 3<input name="s2l" value="Projects shipped"></label><label>Number 4<input name="s3v" value="40+"></label><label>Label 4<input name="s3l" value="Brand partners"></label></div>
+</fieldset>
+
+<fieldset id="work"><legend>🎨 WORK (UP TO 4)</legend><p class="hint">Tags: separate with commas. Link: optional, must start with https://</p></fieldset>
+<fieldset id="svc"><legend>💼 SERVICES (UP TO 4)</legend><p class="hint">What's included: separate with commas.</p></fieldset>
+<fieldset id="rev"><legend>💬 REVIEWS (UP TO 3)</legend></fieldset>
+
+<fieldset><legend>📩 CONTACT</legend>
+<div class="row"><label>Heading<input name="ch" value="Let's work together"></label><label>Email<input name="m" type="email" value="hello@yourname.com"></label></div>
+<label>Message<input name="cp" value="Send your brand, budget and timeline. I reply within 48 hours."></label>
+<div class="row" style="margin-top:8px"><label>Instagram link<input name="ig" value="https://instagram.com"></label><label>TikTok link<input name="tt" value="https://tiktok.com"></label><label>YouTube link<input name="yt" value="https://youtube.com"></label></div>
+<div class="row"><label>LinkedIn link<input name="li" value="https://linkedin.com"></label><label>Website link<input name="ws" value=""></label></div>
+</fieldset>
+<button type="button" class="ghost" id="clear">Clear all sample text</button>
+</form>
+
+<div class="side">
+<div class="out">
+<h2>🔗 YOUR PERSONAL LINK</h2>
+<div class="linkbox"><input id="link" readonly><button type="button" id="copy">COPY</button></div>
+<ol><li>Click <b>Copy</b>.</li><li>In Notion, type <b>/embed</b>, paste the link and click <b>Embed link</b>.</li><li>Want changes later? Come back here, edit, and swap in the new link.</li></ol>
+</div>
+<iframe id="pv" title="Preview of your mini app"></iframe>
+</div>
+</div>
+</div>
+
+<script>
+var W=[
+{i:'🎮',h:'Neon Nights Game Launch',d:'Cinematic teaser and 5 cut-downs for an indie game launch.',g:'Video, TikTok',v:'1.25M',r:'8.4%',u:''},
+{i:'✨',h:'App Launch Motion Pack',d:'Logo stings and neon UI explainers for a software launch.',g:'Motion, Instagram',v:'480K',r:'6.9%',u:''},
+{i:'🛍️',h:'Glow Skincare Rebrand',d:'Logo, palette, packaging mockups and a social kit.',g:'Brand Design, Website',v:'340K',r:'6.1%',u:''},
+{i:'📸',h:'Urban Tech Lookbook',d:'30-shot editorial lookbook for a tech-wear drop.',g:'Photography, Instagram',v:'210K',r:'7.2%',u:''}];
+var V=[
+{c:'Content',h:'Sponsored Short-Form Video',p:'$850',b:'1 vertical video 30–60s, Script + 2 revisions, 5–7 day turnaround'},
+{c:'Content',h:'UGC Ad Bundle',p:'$1,200',b:'3 UGC-style ads, Hook variations + raw footage, 30-day paid usage'},
+{c:'Design',h:'Brand Identity Kit',p:'$2,500',b:'Logo suite + palette, Type system + social templates, Brand guide PDF'},
+{c:'Strategy',h:'Content Strategy Session',p:'$300',b:'60-minute call, Channel audit, 30-day content plan'}];
+var R=[
+{q:'Alex turned our trailer into a moment. The teaser outperformed every paid ad we ran.',c:'PixelForge Studios',o:'Marketing Lead'},
+{q:'Our new brand finally looks like the product feels. Sales lifted 30% after launch.',c:'Glow Co.',o:'Founder'},
+{q:'Fast, creative and easy to work with. The lookbook sold out our drop.',c:'Volt Wear',o:'Creative Director'}];
+function esc(x){return String(x).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+function inp(n,l,v,ta){return '<label>'+l+(ta?'<textarea name="'+n+'">'+esc(v)+'</textarea>':'<input name="'+n+'" value="'+esc(v)+'">')+'</label>'}
+document.getElementById('work').insertAdjacentHTML('beforeend',W.map(function(x,i){return '<div class="slot"><div class="row">'+inp('w'+i+'i','Emoji',x.i)+inp('w'+i+'h','Project name',x.h)+'</div>'+inp('w'+i+'d','Short description',x.d,1)+'<div class="row" style="margin-top:8px">'+inp('w'+i+'g','Tags',x.g)+inp('w'+i+'v','Views',x.v)+inp('w'+i+'r','Engagement',x.r)+'</div>'+inp('w'+i+'u','Link (optional)',x.u)+'</div>'}).join(''));
+document.getElementById('svc').insertAdjacentHTML('beforeend',V.map(function(x,i){return '<div class="slot"><div class="row">'+inp('v'+i+'h','Service',x.h)+inp('v'+i+'c','Category',x.c)+inp('v'+i+'p','Price',x.p)+'</div>'+inp('v'+i+'b',"What's included",x.b,1)+'</div>'}).join(''));
+document.getElementById('rev').insertAdjacentHTML('beforeend',R.map(function(x,i){return '<div class="slot">'+inp('r'+i+'q','Quote',x.q,1)+'<div class="row" style="margin-top:8px">'+inp('r'+i+'c','Client',x.c)+inp('r'+i+'o','Role',x.o)+'</div></div>'}).join(''));
+
+var f=document.getElementById('f');
+function g(n){var el=f.elements[n];return el?el.value.trim():''}
+function data(){
+var d={n:g('n'),t:g('t'),l:g('l'),s:[],w:[],v:[],r:[],m:g('m'),ch:g('ch'),cp:g('cp'),k:{}};
+for(var i=0;i<4;i++){if(g('s'+i+'v')||g('s'+i+'l'))d.s.push([g('s'+i+'v'),g('s'+i+'l')])}
+for(i=0;i<4;i++){if(g('w'+i+'h'))d.w.push({i:g('w'+i+'i'),h:g('w'+i+'h'),d:g('w'+i+'d'),g:g('w'+i+'g'),v:g('w'+i+'v'),r:g('w'+i+'r'),u:g('w'+i+'u')})}
+for(i=0;i<4;i++){if(g('v'+i+'h'))d.v.push({h:g('v'+i+'h'),c:g('v'+i+'c'),p:g('v'+i+'p'),b:g('v'+i+'b')})}
+for(i=0;i<3;i++){if(g('r'+i+'q'))d.r.push({q:g('r'+i+'q'),c:g('r'+i+'c'),o:g('r'+i+'o')})}
+['ig','tt','yt','li','ws'].forEach(function(k){if(g(k))d.k[k]=g(k)});
+if(!d.w.length)d.w=[{h:'Your first project',d:'Add projects in the builder.',i:'✨'}];
+if(!d.v.length)delete d.v;if(!d.r.length)delete d.r;if(!d.s.length)delete d.s;
+return d}
+function enc(o){var b=new TextEncoder().encode(JSON.stringify(o)),s='';for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+var base=new URL('./',location.href).href;
+var t;function update(){var url=base+'?d='+enc(data());document.getElementById('link').value=url;clearTimeout(t);t=setTimeout(function(){document.getElementById('pv').src=url},350)}
+f.addEventListener('input',update);
+document.getElementById('copy').onclick=function(){var l=document.getElementById('link');l.select();var b=this;(navigator.clipboard?navigator.clipboard.writeText(l.value):Promise.reject()).catch(function(){document.execCommand('copy')}).then(function(){b.textContent='COPIED ✓';setTimeout(function(){b.textContent='COPY'},1600)})};
+document.getElementById('clear').onclick=function(){if(confirm('Clear all the sample text?')){Array.prototype.forEach.call(f.elements,function(el){if(el.name)el.value=''});update()}};
+update();
+</script>
+</body>
+</html>
